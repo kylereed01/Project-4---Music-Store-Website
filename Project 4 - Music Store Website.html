@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon for the webpage -->
+    <link rel="icon" type="image/png" href="guitar.png">
+    <style>
+        /* Reset default padding and margin */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Full-screen container with background image */
+        .container {
+            height: 100vh;
+            width: 100%;
+            background-image: url('MusicStoreBackground.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Navigation bar styling */
+        .nav li {
+            float: right;
+            list-style: none;
+        }
+
+        .nav a {
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1rem;
+            font-weight: 550;
+            display: block;
+            padding: 5px 35px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Content positioning */
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 45%;
+        }
+
+        /* Left column styling */
+        .left-col {
+            margin-left: 11%;
+        }
+
+        .left-col h1 {
+            font-size: 50px;
+            color: white;
+        }
+
+        /* Right column styling */
+        .right-col {
+            float: right;
+            margin-right: 10%;
+            margin-top: -5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .right-col p {
+            font-size: 21px;
+            color: white;
+            font-weight: 650;
+            margin-right: 20px;
+        }
+
+        /* Icon styling */
+        #icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container with navigation -->
+    <div class="container">
+        <ul class="nav">
+            <li><a href="https://accuradio.zendesk.com/hc/en-us/articles/360001544094-Welcome-to-AccuRadio-s-Help-Desk">CONTACT US</a></li>
+            <li><a href="https://www.accuradio.com/rock/">OUR MUSIC</a></li>
+        </ul>
+    </div>
+
+    <!-- Content section with title and interactive icon -->
+    <div class="content">
+        <div class="left-col">
+            <h1>ROCK-ON <br> MUSIC STORE</h1>
+        </div>
+
+        <div class="right-col">
+            <p>Check Out Our Latest Sound! Click Here!</p>
+            <img src="click.png" id="icon">
+        </div>
+    </div>
+
+    <!-- Audio element for playing sound -->
+    <audio id="mysound">
+        <source src="RockSound.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Script for handling audio play/pause -->
+    <script>
+        let mysound = document.getElementById("mysound");
+        let icon = document.getElementById("icon");
+
+        icon.onclick = function () {
+            if (mysound.paused) {
+                mysound.play();
+                icon.src = "pause.png"; // Change icon to pause
+            } else {
+                mysound.pause();
+                icon.src = "play.png"; // Change icon to play
+            }
+        }
+    </script>
+</body>
+</html>
